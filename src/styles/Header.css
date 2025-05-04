@@ -1,0 +1,101 @@
+.header {
+    background: linear-gradient(90deg, #30a30d, #67ee55);
+    padding: 14px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  
+  .logo img {
+    height: 60px;
+  }
+  
+  .logo-text {
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: white;
+  }
+  
+  .nav {
+    flex-grow: 1;
+    margin-left: 60px;
+  }
+  
+  .nav-list {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-list a {
+    position: relative;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 6px 0;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-list a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.3s ease;
+  }
+  
+  .nav-list a:hover {
+    color: #f76300;
+  }
+  
+  .nav-list a:hover::after {
+    width: 100%;
+  }
+  
+  .contact {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  
+  .phone {
+    font-weight: bold;
+    color: white;
+  }
+  
+  .btn {
+    background-color: #ff7043;
+    color: white;
+    padding: 8px 14px;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.3s;
+    font-weight: 500;
+  }
+  
+  .btn:hover {
+    background-color: #e64a19;
+  }
+  
