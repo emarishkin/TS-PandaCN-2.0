@@ -1,0 +1,176 @@
+/* Основной контейнер баннера */
+.calc-banner {
+  padding: 2rem;
+  background: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Превью до открытия калькулятора */
+.preview-block {
+  
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.show-btn {
+  margin-top: 1rem;
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  background: #ff6600;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.show-btn:hover {
+  background: #e45500;
+}
+
+/* Контейнер калькулятора */
+.calc-container {
+  margin-top: 2rem;
+  background: #ffffffb9;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(20, 230, 25, 0.4);
+  max-width: 500px;
+  width: 100%;
+}
+
+/* Заголовок */
+.calc-container h3 {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 1.2rem;
+  color: #333;
+}
+
+/* Формы */
+.calc-form,
+.consult-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.calc-form input,
+.consult-form input {
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  width: 100%;
+  transition: border 0.2s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Кнопки */
+.calc-form button,
+.consult-form button {
+  padding: 0.7rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.calc-form button {
+  background: #007bff;
+  color: white;
+}
+
+.calc-form button:hover {
+  background: #0056b3;
+}
+
+.consult-btn {
+  margin-bottom: 20px;
+  background: #28a745;
+  color: white;
+}
+
+.consult-btn:hover {
+  background: #218838;
+}
+
+/* Чекбоксы */
+.checkbox-group {
+  width: 220px;
+}
+
+.checkbox-group h4 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: #f1f1f1;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s ease;
+}
+
+.checkbox-group label:hover {
+  background: #e9e9e9;
+}
+
+.checkbox-group input[type="checkbox"] {
+  accent-color: #007bff;
+  width: 16px;
+  height: 16px;
+}
+
+/* Результат */
+.calc-result {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.full-checkbox-group{
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-result{
+  margin-bottom: 10px;
+}
+
+/* Адаптив */
+@media (max-width: 500px) {
+  .checkbox-group {
+    grid-template-columns: 1fr;
+  }
+
+  .calc-container {
+    padding: 1rem;
+  }
+
+  .show-btn {
+    width: 100%;
+  }
+}

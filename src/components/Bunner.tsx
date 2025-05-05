@@ -1,65 +1,158 @@
 import { ChangeEvent, FC, useState } from "react";
+import "../styles/Bunner.css";
 
-interface BunnerProps{
+interface BunnerProps {}
 
-}
+export const Bunner: FC<BunnerProps> = () => {
+  const [wei, setWei] = useState("");
+  const [volume, setVolume] = useState("");
+  const [cost, setCost] = useState("");
 
-export const Bunner:FC<BunnerProps> = () => {
+  const [option1, setOption1] = useState(false);
+  const [option2, setOption2] = useState(false);
+  const [option3, setOption3] = useState(false);
+  const [option4, setOption4] = useState(false);
 
-const [wei,setWei] = useState('')
-const [volume,setVolume] = useState('')
-const [cost,setCost] = useState('')
+  const [dopOption1, setDopOption1] = useState(false);
+  const [dopOption2, setDopOption2] = useState(false);
 
-const [result, setResult] = useState<string | null>(null);
+  const [result, setResult] = useState<string | null>(null);
+  const [kons, setKons] = useState(false);
+  const [name, setName] = useState<string>("");
+  const [numder, setNumder] = useState<string>("");
+  const [quastion, setQuastion] = useState<string>("");
 
-const handleChange1 = (e:ChangeEvent<HTMLInputElement>) => {
-    setWei(e.target.value)
-}
-const handleChange2 = (e:ChangeEvent<HTMLInputElement>) => {
-    setVolume(e.target.value)
-}
-const handleChange3 = (e:ChangeEvent<HTMLInputElement>) => {
-    setCost(e.target.value)
-}
 
-const handleSubmit = (e:React.FormEvent) => {
-  e.preventDefault()
-  const Wei = parseFloat(wei)
-  const Volume = parseFloat(volume)
-  const Cost = parseFloat(cost)
-  const deliveryCost = (Wei * 2) + (Volume * 100) + (Cost * 0.05);
-  setResult(`Примерная стоимость доставки: $${deliveryCost.toFixed(2)}`);
-}
+  const [showCalc, setShowCalc] = useState(false);
 
-    return(
-        <section>
-            <div>
-                <h3>Калькулятор рассчета стоимости перевозки</h3>
-                <form onSubmit={handleSubmit} >
-                    <input 
-                    type="text"
-                    placeholder="Вес (кг)"
-                    value={wei}
-                    onChange={handleChange1}
-                    />
-                    <input 
-                    type="text"
-                    placeholder="Объем (м³)"
-                    value={volume}
-                    onChange={handleChange2}
-                    />
-                    <input 
-                    type="text"
-                    placeholder="Стоимость товара (USD)"
-                    value={cost}
-                    onChange={handleChange3}
-                    />
-                    <button type="submit">Рассчитать стоимость</button>
-                </form>
-                <div>
-                    {result}
-                </div>
+  const handleChange1 = (e: ChangeEvent<HTMLInputElement>) => setWei(e.target.value);
+  const handleChange2 = (e: ChangeEvent<HTMLInputElement>) => setVolume(e.target.value);
+  const handleChange3 = (e: ChangeEvent<HTMLInputElement>) => setCost(e.target.value);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const Wei = parseFloat(wei);
+    const Volume = parseFloat(volume);
+    const Cost = parseFloat(cost);
+
+    let extraCost = 0;
+    if (option1) extraCost += 2;
+    if (option2) extraCost += 5;
+    if (option3) extraCost += 1.5;
+    if (option4) extraCost += 1;
+
+    let dop = 0;
+    if (dopOption1) dop += 2;
+    if (dopOption2) dop += 0.5;
+
+    const deliveryCost = Wei * 1 + Volume * 2 + Cost * 0.05 + extraCost + dop;
+    setResult(`Примерная стоимость доставки: $${deliveryCost.toFixed(2)}`);
+  };
+
+  return (
+    <section className="calc-banner">
+      {!showCalc && (
+        <div className="preview-block">
+          <img src="/banner.jpg" alt="Banner" className="logo.png" />
+          <button className="show-btn" onClick={() => setShowCalc(true)}>
+            Рассчитать доставку
+          </button>
+        </div>
+      )}
+
+      {showCalc && (
+        <div className="calc-container">
+          <h3>Калькулятор приблизительного рассчета стоимости доставки</h3>
+          <form onSubmit={handleSubmit} className="calc-form">
+            <input type="text" placeholder="Вес (кг)" value={wei} onChange={handleChange1} required />
+            <input type="text" placeholder="Объем (м³)" value={volume} onChange={handleChange2} required />
+            <input type="text" placeholder="Стоимость товара (USD)" value={cost} onChange={handleChange3} required />
+            
+            <div className="full-checkbox-group">
+            <div className="checkbox-group">
+              <h4>Тарифы</h4>
+              <label>
+                <input
+                    type="checkbox"
+                    checked={option1}
+                    onChange={() => setOption1(prev => !prev)}
+                />
+                Экспресс
+              </label>
+              <label>
+                <input
+                    type="checkbox"
+                    checked={option2}
+                    disabled={option4 || option3} // блокируется, если выбрана медленное авто
+                    onChange={() => {
+                    const next = !option2;
+                    setOption2(next);
+                    if (next) {
+                      setOption3(false);
+                      setOption4(false);
+                    }
+                    }}
+                />
+                Авиадоставка
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    checked={option3}
+                    disabled={option2 || option4} // блокируется, если выбраны авия или медленное
+                    onChange={() => {
+                        const next = !option3;
+                        setOption3(next);
+                        if (next) {
+                          setOption2(false);
+                          setOption4(false);
+                        }
+                        }}
+                  />
+                  Стандартное авто
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    checked={option4}
+                    disabled={option2 || option3} // блокируется, если выбрана авия
+                    onChange={() => {
+                      const next = !option4;
+                      setOption4(next);
+                      if (next) {
+                        setOption2(false);
+                        setOption3(false);
+                      }
+                    }}
+                  />
+                  Медленное авто
+                </label>             
             </div>
-        </section>
-    )
-}
+
+            <div className="checkbox-group">
+              <h4>Дополнительные услуги</h4>
+              <label><input type="checkbox" checked={dopOption1} onChange={() => setDopOption1(prev=>!prev)} />Страховка</label>
+              <label><input type="checkbox" checked={dopOption2} onChange={() => setDopOption2(prev=>!prev)} />Надёжная упаковка</label>
+            </div>
+            </div>
+
+            <button className="button-result" type="submit">Рассчитать стоимость доставки</button>
+          </form>
+
+          <button className="consult-btn" onClick={() => setKons(prev=>!prev)}>Консультация</button>
+
+          {kons && (
+            <div className="consult-form">
+              <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Введите имя" />
+              <input type="text" value={numder} onChange={(e) => setNumder(e.target.value)} placeholder="Введите номер телефона" />
+              <input type="text" value={quastion} onChange={(e) => setQuastion(e.target.value)} placeholder="Введите ваш вопрос" />
+              <button onClick={() => alert(`спасибо ${name}, с вами свяжутся в течение 12 часов`)}>Отправить</button>
+            </div>
+          )}
+
+          <div className="calc-result">{result}</div>
+        </div>
+      )}
+    </section>
+  );
+};
