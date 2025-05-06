@@ -54,23 +54,41 @@ export const Bunner: FC<BunnerProps> = () => {
   return (
     <section className="calc-banner">
       {!showCalc && (
-        <div className="preview-block">
-          <h1 className="h1-vikup">Выкуп и доставка товара из китая для селлеров 
-            <span className="wb">WB</span>
-            и
-            <span className="ozon">OZON</span>
+        <div className="main-banner">
+        <img src={banner} alt="Banner" className="banner-bg" />
+        <div className="banner-content">
+          <h1 className="banner-title">
+            Выкуп и доставка товара из Китая для селлеров <span className="wb">WB</span> и <span className="ozon">OZON</span>
           </h1>
-          <img src={banner} alt="Banner" className="" />
-          <button className="show-btn" onClick={() => setShowCalc(true)}>
+          <button className="banner-btn" onClick={() => setShowCalc(true)}>
             Рассчитать доставку
           </button>
-          {/* <a href="https://t.me/PandaCnExpres"><img src={telegram} className="show-tg" alt="" /></a> */}
         </div>
+      </div>
       )}
 
       {showCalc && (
         <div className="calc-container">
+          <div className="header-calc">
           <h3>Калькулятор приблизительного рассчета стоимости доставки</h3>
+          <button className="close-btn" onClick={() => setShowCalc(false)} aria-label="Закрыть">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    width="20"
+    height="20"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <line x1="18" y1="6" x2="6" y2="18" />
+    <line x1="6" y1="6" x2="18" y2="18" />
+  </svg>
+</button>
+
+          </div>
           <form onSubmit={handleSubmit} className="calc-form">
             <input type="text" placeholder="Вес (кг)" value={wei} onChange={handleChange1} required />
             <input type="text" placeholder="Объем (м³)" value={volume} onChange={handleChange2} required />

@@ -1,7 +1,7 @@
 /* Основной контейнер баннера */
 .calc-banner {
   padding: 2rem;
-  background: #f9f9f9;
+  
   display: flex;
   justify-content: center;
   font-family: 'Segoe UI', sans-serif;
@@ -20,7 +20,14 @@
 
 .h1-vikup{
   position: absolute;
-  
+  left: 100px;
+  color: #1e1e1e;
+  font-family: var(--mr900);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 140%;
+  max-width: 590px;
 }
 
 .show-btn {
@@ -37,6 +44,15 @@
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s ease;
+}
+
+.header-calc{
+  display: flex;
+}
+
+.close-btn{
+  height: 49px;
+  width: 67px;
 }
 
 .show-tg{
@@ -177,26 +193,96 @@ input:focus {
 }
 
 .full-checkbox-group{
-  display: flex;
-  justify-content: space-between;
+  display: flex
+  ;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
 }
 
 .button-result{
   margin-bottom: 10px;
 }
 
-/* Адаптив */
-@media (max-width: 500px) {
-  .checkbox-group {
-    grid-template-columns: 1fr;
-  }
+.main-banner {
+  position: relative;
+  max-width: 1000px;
+  margin: 2rem auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
 
-  .calc-container {
+.banner-bg {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+
+.banner-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+}
+
+.banner-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.wb {
+  color: #8b00ff;
+  font-weight: bold;
+}
+
+.ozon {
+  color: #00aaff;
+  font-weight: bold;
+}
+
+.banner-btn {
+  background-color: #ff6600;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.banner-btn:hover {
+  background-color: #e65500;
+}
+/* Адаптив */
+@media screen and (max-width: 768px) {
+  .banner-content {
     padding: 1rem;
   }
 
-  .show-btn {
-    width: 100%;
-    max-width: 200px;
+  .banner-title {
+    font-size: 1.4rem;
+    margin-bottom: 0;
   }
+
+  .banner-btn {
+    width: 180px;
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  
 }
