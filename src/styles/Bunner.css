@@ -9,16 +9,24 @@
 
 /* Превью до открытия калькулятора */
 .preview-block {
-  
+ 
   text-align: center;
-  max-width: 500px;
+  max-width: 700px;
   width: 100%;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  border-radius: 20px;
 }
 
-
+.h1-vikup{
+  position: absolute;
+  
+}
 
 .show-btn {
+  position: absolute;
+  left: 30px;
+  bottom: 90px;
   margin-top: 1rem;
   padding: 0.7rem 1.2rem;
   font-size: 1rem;
@@ -29,6 +37,23 @@
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s ease;
+}
+
+.show-tg{
+  position: fixed;
+  left: 280px;
+  bottom: 90px;
+  margin-top: 1rem;
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  z-index: 1000;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 10px;
+  height: 10px;
 }
 
 .show-btn:hover {
@@ -172,5 +197,6 @@ input:focus {
 
   .show-btn {
     width: 100%;
+    max-width: 200px;
   }
 }

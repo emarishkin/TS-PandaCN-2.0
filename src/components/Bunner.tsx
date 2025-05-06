@@ -1,5 +1,7 @@
 import { ChangeEvent, FC, useState } from "react";
 import "../styles/Bunner.css";
+import banner from '/banner.png'
+// import telegram from '/telegram.jpg'
 
 interface BunnerProps {}
 
@@ -53,10 +55,16 @@ export const Bunner: FC<BunnerProps> = () => {
     <section className="calc-banner">
       {!showCalc && (
         <div className="preview-block">
-          <img src="/banner.jpg" alt="Banner" className="logo.png" />
+          <h1 className="h1-vikup">Выкуп и доставка товара из китая для селлеров 
+            <span className="wb">WB</span>
+            и
+            <span className="ozon">OZON</span>
+          </h1>
+          <img src={banner} alt="Banner" className="" />
           <button className="show-btn" onClick={() => setShowCalc(true)}>
             Рассчитать доставку
           </button>
+          {/* <a href="https://t.me/PandaCnExpres"><img src={telegram} className="show-tg" alt="" /></a> */}
         </div>
       )}
 
@@ -75,7 +83,16 @@ export const Bunner: FC<BunnerProps> = () => {
                 <input
                     type="checkbox"
                     checked={option1}
-                    onChange={() => setOption1(prev => !prev)}
+                    disabled={option2 || option3 || option4}
+                    onChange={() => {
+                      const next = !option1;
+                      setOption1(next);
+                      if (next) {
+                        setOption2(false)
+                        setOption3(false);
+                        setOption4(false);
+                      }
+                      }}
                 />
                 Экспресс
               </label>
@@ -83,11 +100,12 @@ export const Bunner: FC<BunnerProps> = () => {
                 <input
                     type="checkbox"
                     checked={option2}
-                    disabled={option4 || option3} // блокируется, если выбрана медленное авто
+                    disabled={option4 || option3 || option1} // блокируется, если выбрана медленное авто
                     onChange={() => {
                     const next = !option2;
                     setOption2(next);
                     if (next) {
+                      setOption1(false)
                       setOption3(false);
                       setOption4(false);
                     }
@@ -99,11 +117,12 @@ export const Bunner: FC<BunnerProps> = () => {
                   <input
                     type="checkbox"
                     checked={option3}
-                    disabled={option2 || option4} // блокируется, если выбраны авия или медленное
+                    disabled={option2 || option4 || option1} // блокируется, если выбраны авия или медленное
                     onChange={() => {
                         const next = !option3;
                         setOption3(next);
                         if (next) {
+                          setOption1(false)
                           setOption2(false);
                           setOption4(false);
                         }
@@ -115,11 +134,12 @@ export const Bunner: FC<BunnerProps> = () => {
                   <input
                     type="checkbox"
                     checked={option4}
-                    disabled={option2 || option3} // блокируется, если выбрана авия
+                    disabled={option2 || option3 || option1} // блокируется, если выбрана авия
                     onChange={() => {
                       const next = !option4;
                       setOption4(next);
                       if (next) {
+                        setOption1(false)
                         setOption2(false);
                         setOption3(false);
                       }
