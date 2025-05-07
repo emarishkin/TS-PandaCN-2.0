@@ -3,7 +3,7 @@ import { InfoTwoCards } from "./InfotwoCards"
 
 export const InfoTwo:FC = () => {
     return(
-      <section>
+      <section style={{marginBottom:50}}>
         <InfoTwoCards />
       </section>
     )
