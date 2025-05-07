@@ -1,6 +1,7 @@
 
 import { Bunner } from "./components/Bunner"
 import { Header } from "./components/Header"
+import { InfoTwo } from "./components/InfoTwo"
 import './styles/All.css'
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <>
       <Header />
       <Bunner />
+      <InfoTwo />
     </>
   )
 }
