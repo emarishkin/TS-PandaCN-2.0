@@ -19,11 +19,19 @@ export const Bunner: FC<BunnerProps> = () => {
   const [dopOption2, setDopOption2] = useState(false);
 
   const [result, setResult] = useState<string | null>(null);
+  const [errorMassage, setErrorMassage] = useState<string | null>(null);
+
+
   const [kons, setKons] = useState(false);
   const [name, setName] = useState<string>("");
   const [numder, setNumder] = useState<string>("");
   const [quastion, setQuastion] = useState<string>("");
 
+  const [inputErrors, setInputErrors] = useState({
+    wei: false,
+    volume: false,
+    cost: false
+  });
 
   const [showCalc, setShowCalc] = useState(false);
 
@@ -32,23 +40,47 @@ export const Bunner: FC<BunnerProps> = () => {
   const handleChange3 = (e: ChangeEvent<HTMLInputElement>) => setCost(e.target.value);
 
   const handleSubmit = (e: React.FormEvent) => {
+
     e.preventDefault();
+
     const Wei = parseFloat(wei);
     const Volume = parseFloat(volume);
     const Cost = parseFloat(cost);
 
+    const errors = {
+      wei: isNaN(Wei) || Wei <= 0,
+      volume: isNaN(Volume) || Volume <= 0,
+      cost: isNaN(Cost) || Cost <= 0
+    };
+  
+    setInputErrors(errors);
+
+    if(!option1 && !option2 && !option3 && !option4){
+      setErrorMassage('выберите тариф')
+      setResult(null)
+      return
+    }
+
+    if (isNaN(Wei) || isNaN(Volume) || isNaN(Cost) || Wei <= 0 || Volume <= 0 || Cost <= 0) {
+      setErrorMassage("Введите корректные положительные значения для веса, объема и стоимости товара");
+      setResult(null);
+      return;
+    }
+    
+    setErrorMassage(null)
+
     let extraCost = 0;
-    if (option1) extraCost += 2;
-    if (option2) extraCost += 5;
-    if (option3) extraCost += 1.5;
-    if (option4) extraCost += 1;
+    if (option1) extraCost += 2000;
+    if (option2) extraCost += 1500;
+    if (option3) extraCost += 500;
+    if (option4) extraCost += 200;
 
     let dop = 0;
-    if (dopOption1) dop += 2;
-    if (dopOption2) dop += 0.5;
+    if (dopOption1) dop += 999;
+    if (dopOption2) dop += 500;
 
     const deliveryCost = Wei * 1 + Volume * 2 + Cost * 0.05 + extraCost + dop;
-    setResult(`Примерная стоимость доставки: $${deliveryCost.toFixed(2)}`);
+    setResult(`Примерная стоимость доставки: ${deliveryCost.toFixed(2)} рублей`);
   };
 
   return (
@@ -90,9 +122,29 @@ export const Bunner: FC<BunnerProps> = () => {
 
           </div>
           <form onSubmit={handleSubmit} className="calc-form">
-            <input type="text" placeholder="Вес (кг)" value={wei} onChange={handleChange1} required />
-            <input type="text" placeholder="Объем (м³)" value={volume} onChange={handleChange2} required />
-            <input type="text" placeholder="Стоимость товара (USD)" value={cost} onChange={handleChange3} required />
+          <input
+  type="text"
+  placeholder="Вес (кг)"
+  value={wei}
+  onChange={handleChange1}
+  className={inputErrors.wei ? "input-error" : ""}
+/>
+
+<input
+  type="text"
+  placeholder="Объем (м³)"
+  value={volume}
+  onChange={handleChange2}
+  className={inputErrors.volume ? "input-error" : ""}
+/>
+
+<input
+  type="text"
+  placeholder="Стоимость товара (RUB)"
+  value={cost}
+  onChange={handleChange3}
+  className={inputErrors.cost ? "input-error" : ""}
+/>
             
             <div className="full-checkbox-group">
             <div className="checkbox-group">
@@ -173,22 +225,38 @@ export const Bunner: FC<BunnerProps> = () => {
               <label><input type="checkbox" checked={dopOption2} onChange={() => setDopOption2(prev=>!prev)} />Надёжная упаковка</label>
             </div>
             </div>
-
+            {errorMassage && <div className="error-message">{errorMassage}</div>}
             <button className="button-result" type="submit">Рассчитать стоимость доставки</button>
           </form>
 
           <button className="consult-btn" onClick={() => setKons(prev=>!prev)}>Консультация</button>
 
-          {kons && (
+          <div className={`consult-form-wrapper ${kons ? "open" : ""}`}>
             <div className="consult-form">
               <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Введите имя" />
               <input type="text" value={numder} onChange={(e) => setNumder(e.target.value)} placeholder="Введите номер телефона" />
-              <input type="text" value={quastion} onChange={(e) => setQuastion(e.target.value)} placeholder="Введите ваш вопрос" />
+              
+              <textarea
+              value={quastion}
+              onChange={(e) => {
+                setQuastion(e.target.value);
+                const el = e.target as HTMLTextAreaElement;
+                el.style.height = "auto";
+                el.style.height = `${el.scrollHeight}px`;
+              }}
+              placeholder="Введите ваш вопрос"
+              className="textarea-question"
+              rows={1}
+              />
+          
               <button onClick={() => alert(`спасибо ${name}, с вами свяжутся в течение 12 часов`)}>Отправить</button>
             </div>
-          )}
+          </div>
 
-          <div className="calc-result">{result}</div>
+          <div className="calc-result">
+          {result && <div className="calc-result">{result}</div>}
+            
+          </div>
         </div>
       )}
     </section>

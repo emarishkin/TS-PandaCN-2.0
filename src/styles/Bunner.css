@@ -18,6 +18,38 @@
   border-radius: 20px;
 }
 
+.input-error {
+  border: 2px solid red;
+  background-color: #ffe6e6;
+}
+
+.consult-form-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.consult-form-wrapper.open {
+  max-height: 500px; /* Достаточно, чтобы вместить форму */
+}
+
+.consult-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.question-wrapper {
+  transition: transform 0.3s ease, margin-top 0.3s ease;
+}
+
+.question-wrapper.active {
+  transform: translateY(20px);
+  margin-top: 10px;
+}
+
+
 .h1-vikup{
   position: absolute;
   left: 100px;
@@ -200,6 +232,13 @@ input:focus {
       gap: 10px;
 }
 
+.error-message {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+
 .button-result{
   margin-bottom: 10px;
 }
@@ -251,6 +290,19 @@ input:focus {
   color: #00aaff;
   font-weight: bold;
 }
+
+.textarea-question {
+  border-radius: 10px;
+  resize: none;
+  overflow: hidden;
+  min-height: 40px;
+  max-height: 200px;
+  line-height: 1.5;
+  padding: 8px;
+  font-size: 14px;
+  transition: height 0.2s ease;
+}
+
 
 .banner-btn {
   background-color: #ff6600;
