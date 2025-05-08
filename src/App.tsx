@@ -1,18 +1,21 @@
 
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import { Bunner } from "./components/Bunner"
 import { Header } from "./components/Header"
-import { InfoTwo } from "./components/InfoTwo"
-import { TariffsSection } from "./components/TariffsSection"
 import './styles/All.css'
+import { HomePage } from "./pages/HomePage"
 
 function App() {
  
   return (
     <>
+      <Router>
       <Header />
-      <Bunner />
-      <InfoTwo />
-      <TariffsSection/>
+      <Routes>
+        <Route path="/" element={<HomePage/>} />
+        <Route path="/calculator" element={<Bunner />} />
+      </Routes>
+    </Router>
     </>
   )
 }
