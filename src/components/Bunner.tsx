@@ -1,7 +1,6 @@
 import { ChangeEvent, FC, useState } from "react";
 import "../styles/Bunner.css";
 import banner from '/banner.png'
-// import telegram from '/telegram.jpg'
 
 interface BunnerProps {}
 
@@ -170,7 +169,7 @@ export const Bunner: FC<BunnerProps> = () => {
                 <input
                     type="checkbox"
                     checked={option2}
-                    disabled={option4 || option3 || option1} // блокируется, если выбрана медленное авто
+                    disabled={option4 || option3 || option1} 
                     onChange={() => {
                     const next = !option2;
                     setOption2(next);
@@ -187,7 +186,7 @@ export const Bunner: FC<BunnerProps> = () => {
                   <input
                     type="checkbox"
                     checked={option3}
-                    disabled={option2 || option4 || option1} // блокируется, если выбраны авия или медленное
+                    disabled={option2 || option4 || option1} 
                     onChange={() => {
                         const next = !option3;
                         setOption3(next);
@@ -204,7 +203,7 @@ export const Bunner: FC<BunnerProps> = () => {
                   <input
                     type="checkbox"
                     checked={option4}
-                    disabled={option2 || option3 || option1} // блокируется, если выбрана авия
+                    disabled={option2 || option3 || option1} 
                     onChange={() => {
                       const next = !option4;
                       setOption4(next);
