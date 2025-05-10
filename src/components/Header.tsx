@@ -12,7 +12,7 @@ export const Header: FC<HeaderProps> = () => {
       <div className="container">
         <div className="logo">
           <img src={logo} alt="logo" />
-          <span className="logo-text">PandaCnExpress</span>
+          <span className="logo-text"><a style={{textDecoration:'none',color:'#ff7043'}} href="/">PandaCnExpress</a></span>
         </div>
 
         <nav className={`nav ${menuOpen ? "open" : ""}`}>
