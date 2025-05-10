@@ -1,0 +1,19 @@
+.prem-items{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.prem-h2{
+        color: #1e1e1e;
+    font-family: var(--mr700);
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    margin-left: 30px;
+}
+
+.prem-section{
+    margin-bottom: 25px;
+}

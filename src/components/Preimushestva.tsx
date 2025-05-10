@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { PreimushestvaCard } from "./PreimushestvaCard";
 import { preimushestvas } from "../data/preimushestvas";
+import '../styles/Prem.css'
 
 interface PreimushestvaProps{}
 

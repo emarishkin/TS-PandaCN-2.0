@@ -1,0 +1,45 @@
+.prem-item{
+    max-width: 340px;
+    padding: 10px;
+}
+
+.prem-item:nth-child(2),
+.prem-item:nth-child(5){
+    max-width: 440px;
+}
+
+.prem-head{
+    display: flex; 
+    align-items: center; 
+}
+
+.prem-img{
+background: #21e363;
+    min-width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.prem-h3{
+           color: #21e363;
+    font-family: var(--mr600);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    margin-left: 15px;
+    line-height: 1;
+    margin: 0;
+    margin-left: 10px;
+}
+.prev-text{
+    color: #1e1e1e;
+    font-family: var(--mr400);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 15px;
+    line-height: 140%;
+}
