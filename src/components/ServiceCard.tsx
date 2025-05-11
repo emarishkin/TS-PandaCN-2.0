@@ -5,9 +5,10 @@ import '../styles/ServiceCard.css'
 
 interface ServiceCardProps{
     service:IService[]
+    clickButton1:()=>void
 }
 
-export const ServiceCard:FC<ServiceCardProps> = ({service}) => {
+export const ServiceCard:FC<ServiceCardProps> = ({service,clickButton1}) => {
     return(
         <div className="container">
             <div className="service-items">
@@ -17,7 +18,7 @@ export const ServiceCard:FC<ServiceCardProps> = ({service}) => {
                    <p className="service-desc">{s.description}</p>
                    <img className="service-img" src={s.img} alt="" />
                    <div className="service-buttons">
-                    <button className="service-button1">{s.button}</button>
+                    <button onClick={clickButton1} className="service-button1">{s.button}</button>
                     {index>=service.length-2&& <button className="service-button2">{s.button2}</button> }
                     
                    </div>
