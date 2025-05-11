@@ -3,6 +3,7 @@ import { Bunner } from "../components/Bunner";
 import { InfoTwo } from "../components/InfoTwo";
 import { TariffsSection } from "../components/TariffsSection";
 import { Preimushestva } from "../components/Preimushestva";
+import { ServiceSection } from "../components/ServiceSection";
 
 
 export const HomePage: React.FC = () => {
@@ -12,6 +13,7 @@ export const HomePage: React.FC = () => {
       <InfoTwo />
       <TariffsSection />
       <Preimushestva />
+      <ServiceSection />
     </div>
   );
 };
