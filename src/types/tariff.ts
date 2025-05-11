@@ -1,5 +1,5 @@
 export interface Tariff{
-    id: string,
+    id: number,
     title: string,
     img:string,
     description:string,

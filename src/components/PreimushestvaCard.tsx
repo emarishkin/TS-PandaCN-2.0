@@ -10,7 +10,7 @@ export const PreimushestvaCard:FC<PreimushestvaCard> = ({prem}) => {
     return(
         <div className="prem-items">
                 {prem.map((p)=>(
-                    <div className="prem-item">
+                    <div key={p.title} className="prem-item">
                         <div className="prem-head">
                             <img className="prem-img" src={p.img} alt="" />
                             <h3 className="prem-h3">{p.title}</h3>

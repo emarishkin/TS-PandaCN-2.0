@@ -102,7 +102,7 @@ export const Bunner: FC<BunnerProps> = () => {
         <div className="calc-container">
           <div className="header-calc">
           <h3>Калькулятор приблизительного рассчета стоимости доставки</h3>
-          <button className="close-btn" onClick={() => setShowCalc(false)} aria-label="Закрыть">
+          <button className="close-btn1" onClick={() => setShowCalc(false)} aria-label="Закрыть">
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"

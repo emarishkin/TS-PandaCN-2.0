@@ -12,7 +12,7 @@ interface TariffBlockProps {
 export const TariffBlock: FC<TariffBlockProps> = ({ tariff, onRequestClick }) => {
   return (
     <div className="tariff-block">
-      <div className="tariff-header">
+      <div className="tariff-header" key={tariff.id}>
         <h3 className="title-tariff">{tariff.title}</h3>
         <p className="text-tariff">{tariff.description}</p>
         <img className="img-tariff" src={tariff.img} alt="" />

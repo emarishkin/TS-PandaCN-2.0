@@ -2,7 +2,7 @@ import { Tariff } from "../types/tariff";
 
 export const tariffs:Tariff[] = [
     {
-      id: "express",
+      id: 1,
       title: "Экспресс",
       description:'Авиадоставка образцов за 48 часов до Москвы',
       img:'https://pandacnexpress.ru/images/tariff/p-r.png',
@@ -11,7 +11,7 @@ export const tariffs:Tariff[] = [
       
     },
     {
-      id: "standard",
+      id: 2,
       title: "Авиадоставка",
       description:'Самый быстрый и надежный вариант доставки',
       img:'https://pandacnexpress.ru/images/tariff/p-2.png',
@@ -20,7 +20,7 @@ export const tariffs:Tariff[] = [
       
     },
     {
-      id: "standard",
+      id: 3,
       title: "Стандартное авто",
       description:'Самый выгодный тариф по соотношению цены и качества',
       img:'https://pandacnexpress.ru/images/tariff/p-3.png',
@@ -29,7 +29,7 @@ export const tariffs:Tariff[] = [
       
     },
     {
-      id: "standard",
+      id: 4,
       title: "Медленное авто",
       description:'Самый дешевый тариф для запланированных пополнений остатков на складах',
       img:'https://pandacnexpress.ru/images/tariff/p-4.png',
