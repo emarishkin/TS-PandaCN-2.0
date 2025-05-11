@@ -11,13 +11,16 @@ export const ServiceCard:FC<ServiceCardProps> = ({service}) => {
     return(
         <div className="container">
             <div className="service-items">
-               {service.map((s)=>(
+               {service.map((s,index)=>(
                 <div key={s.title} className="service-item">
-                   <h2>{s.title}</h2>
-                   <p>{s.description}</p>
-                   <img src={s.img} alt="" />
-                   <button>{s.button}</button>
-                   <button>{s.button2}</button>
+                   <h2 className="service-title">{s.title}</h2>
+                   <p className="service-desc">{s.description}</p>
+                   <img className="service-img" src={s.img} alt="" />
+                   <div className="service-buttons">
+                    <button className="service-button1">{s.button}</button>
+                    {index>=service.length-2&& <button className="service-button2">{s.button2}</button> }
+                    
+                   </div>
                 </div>
                ))}
             </div>

@@ -17,3 +17,28 @@
     min-height: 313px;
     margin-top: 20px;
 }
+
+
+.service-img{
+    position: absolute;
+    right: 10px;
+    bottom: 44px;
+}
+
+.service-buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 145px;
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+}
+
+.service-button2:nth-child(1){
+    display: none;
+}
+
+.service-title{
+    font-weight: 600;
+}
