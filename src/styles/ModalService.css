@@ -197,11 +197,13 @@ textarea.popup__input {
     }
 
     .popup__content-text{
-      font-size: 14px;
+      font-size: 11px;
+      margin-top: 0;
+      margin-bottom: 0;
     }
     
     .popup__content-info{
-      font-size: 14px;
+      font-size: 12px;
     }
 
     .popup__content-title {
@@ -213,11 +215,28 @@ textarea.popup__input {
     .popup__content-radios {
         flex-direction: column;
         gap: 0;
+        margin: 5px;
     }
 
     .input-label {
-        padding: 8px 10px;
+        padding: 4px 10px;
         white-space: normal;
+    }
+
+    .tariff-text{
+      margin: 0;
+    }
+
+    .textarea .popup__input{
+          display: none;
+    }
+
+    .modal2-inputs{
+      gap: 5px;
+      margin-bottom: 2px;
+    }
+    .popup__input {
+        padding: 6px 12px;
     }
 }
 
