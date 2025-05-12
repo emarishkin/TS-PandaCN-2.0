@@ -144,6 +144,7 @@ export const ServiceModal: FC<ServiceModalProps> = ({ onClose, isOpen }) => {
                             >
                                 ✖
                             </button>
+                            <p className="popup__content-info">Нажимая кнопку "Отправить", вы соглашаетесь с <a href="#">политикой конфиденциальности</a></p>
                         </form>
                     </div>
                 </div>

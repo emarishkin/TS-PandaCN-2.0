@@ -15,7 +15,7 @@
 .modal2 {
     background: white;
     padding: 30px;
-    border-radius: 10px;
+    border-radius: 50px;
     width: 100%;
     max-width: 600px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -33,6 +33,15 @@
 .popup__content {
     display: flex;
     flex-direction: column;
+}
+
+.popup__content-info{
+font-size: 14px;
+    font-family: var(--mr400);
+    font-weight: 400;
+    color: #1e1e1e;
+    margin-top: 10px;
+    text-align: center;
 }
 
 .popup__content-title {
