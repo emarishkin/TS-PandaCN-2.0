@@ -16,7 +16,54 @@
   padding: 2rem;
   border-radius: 16px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  max-width: 400px;
+  max-width: 660px;
   width: 90%;
   position: relative;
+  height: 700px;
+}
+
+.popup__content{
+  padding: 60px 50px;
+  background: #fff;
+  border-radius: 30px;
+  max-width: 620px;
+  height: max-content;
+  margin: auto;
+  position: relative;
+}
+
+.popup__content-close{
+position: absolute;
+right: 22px;
+top: 22px;
+transition: .4s;
+cursor: pointer;
+width: 62px;
+height: 47px;
+}
+
+.service-section{
+display: flex
+;
+opacity: 1;
+animation: showPopup 450ms ease-in-out;
+}
+
+.popup__content-title{
+  font-family: var(--mr700);
+    font-size: 36px;
+    color: #21e363;
+    font-weight: 700;
+    line-height: 99%;
+    text-align: center;
+}
+
+.popup__content-text{
+  font-family: var(--mr400);
+    font-size: 18px;
+    color: #1e1e1e;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 30px;
+    max-width: 511px;
 }
