@@ -1,56 +1,42 @@
-.modal-service{
-     position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
+/* Основные стили модального окна */
+.modal-service {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
 
 .modal2 {
-  background: #ffffff;
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  max-width: 660px;
-  width: 90%;
-  position: relative;
-  height: 700px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
 }
 
-.popup__content{
-  padding: 60px 50px;
-  background: #fff;
-  border-radius: 30px;
-  max-width: 620px;
-  height: max-content;
-  margin: auto;
-  position: relative;
+.tariff-text{
+  font-size: 18px;
+    font-family: var(--mr500);
+    font-weight: 500;
+   
+    margin-left: 30px;
 }
 
-.popup__content-close{
-position: absolute;
-right: 22px;
-top: 22px;
-transition: .4s;
-cursor: pointer;
-width: 62px;
-height: 47px;
+.popup__content {
+    display: flex;
+    flex-direction: column;
 }
 
-.service-section{
-display: flex
-;
-opacity: 1;
-animation: showPopup 450ms ease-in-out;
-}
-
-.popup__content-title{
-  font-family: var(--mr700);
+.popup__content-title {
+        font-family: var(--mr700);
     font-size: 36px;
     color: #21e363;
     font-weight: 700;
@@ -58,12 +44,170 @@ animation: showPopup 450ms ease-in-out;
     text-align: center;
 }
 
-.popup__content-text{
-  font-family: var(--mr400);
+.popup__content-text {
+        font-family: var(--mr400);
     font-size: 18px;
     color: #1e1e1e;
     font-weight: 400;
     text-align: center;
     margin-top: 30px;
     max-width: 511px;
+}
+
+/* Стили для инпутов */
+.modal2-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.popup__input {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.popup__input:focus {
+    outline: none;
+    border-color: #0066cc;
+}
+
+.popup__input::placeholder {
+    color: #aaa;
+}
+
+textarea.popup__input {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Стили для радиокнопок */
+.popup__content-radios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 15px 0 25px;
+}
+
+.input-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    padding: 8px 12px;
+    background: #f5f5f5;
+    border-radius: 20px;
+}
+
+.input-label:hover {
+    background: #eef5ff;
+    color: #0066cc;
+}
+
+.input-label input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.input-label .inp-span {
+    position: relative;
+    padding-left: 28px;
+}
+
+.input-label .inp-span:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    background: white;
+}
+
+.input-label input[type="radio"]:checked + .inp-span:before {
+    border-color: #0066cc;
+    background-color: #0066cc;
+}
+
+.input-label input[type="radio"]:checked + .inp-span:after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+
+.input-label:hover .inp-span:before {
+    border-color: #0066cc;
+}
+
+/* Стиль для выбранной радиокнопки */
+.input-label input[type="radio"]:checked ~ .inp-span {
+    color: #0066cc;
+    font-weight: 500;
+}
+
+/* Кнопка закрытия */
+.popup__content-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.2s;
+}
+
+.popup__content-close:hover {
+    color: #333;
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    .modal2 {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .popup__content-title {
+        font-size: 20px;
+    }
+
+    .popup__content-radios {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .input-label {
+        padding: 8px 10px;
+        white-space: normal;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal2 {
+        padding: 15px;
+    }
+
+    .popup__input {
+        padding: 10px 12px;
+    }
 }
