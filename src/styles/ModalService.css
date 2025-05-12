@@ -196,13 +196,23 @@ textarea.popup__input {
         margin: 20px;
     }
 
+    .popup__content-text{
+      font-size: 14px;
+    }
+    
+    .popup__content-info{
+      font-size: 14px;
+    }
+
     .popup__content-title {
         font-size: 20px;
+        margin-right: 40px;
+        margin-top: 20px;
     }
 
     .popup__content-radios {
         flex-direction: column;
-        gap: 10px;
+        gap: 0;
     }
 
     .input-label {
