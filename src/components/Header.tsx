@@ -1,6 +1,7 @@
 import { FC, useState } from "react";
 import "../styles/Header.css";
 import logo from "/logo.png";
+import { Link } from "react-router-dom";
 
 interface HeaderProps {}
 
@@ -17,8 +18,8 @@ export const Header: FC<HeaderProps> = () => {
 
         <nav className={`nav ${menuOpen ? "open" : ""}`}>
           <ul className="nav-list">
-            <li><a href="/">Главная</a></li>
-            <li><a href="/tariffs">Тарифы</a></li>
+            <li><Link to='/'>Главная</Link></li>
+            <li><Link to='/tariffs'>Тарифы</Link></li>
             <li><a href="/services">Услуги</a></li>
             <li><a href="/calculator">Калькулятор</a></li>
             <li><a href="/contacts">Контакты</a></li>
