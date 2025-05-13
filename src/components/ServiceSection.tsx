@@ -2,6 +2,7 @@ import { FC, useState } from "react";
 import { ServiceCard } from "./ServiceCard";
 import { services } from "../data/service";
 import { ServiceModal } from "./ServiceModal";
+import '../styles/ServiceSection.css'
 
 interface ServiceSectionProps{
 

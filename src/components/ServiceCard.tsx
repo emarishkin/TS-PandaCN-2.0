@@ -11,6 +11,7 @@ interface ServiceCardProps{
 export const ServiceCard:FC<ServiceCardProps> = ({service,clickButton1}) => {
     return(
         <div className="container">
+            <h2 className="service-h2">Наши услуги</h2>
             <div className="service-items">
                {service.map((s,index)=>(
                 <div key={s.title} className="service-item">
