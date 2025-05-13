@@ -1,10 +1,10 @@
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
-import { Bunner } from "./components/Bunner"
 import { Header } from "./components/Header"
 import './styles/All.css'
 import { HomePage } from "./pages/HomePage"
-import { TariffsSection } from "./components/TariffsSection"
+import { CalculatePage } from "./pages/CalculatePage"
+import { TariffPage } from "./pages/TariffPage"
 
 function App() {
  
@@ -14,8 +14,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<HomePage/>} />
-        <Route path="/calculator" element={<Bunner />} />
-        <Route path="/tariffs" element={<TariffsSection />} />
+        <Route path="/calculator" element={<CalculatePage />} />
+        <Route path="/tariffs" element={<TariffPage />} />
       </Routes>
     </Router>
     </>

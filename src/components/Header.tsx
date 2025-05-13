@@ -18,11 +18,11 @@ export const Header: FC<HeaderProps> = () => {
 
         <nav className={`nav ${menuOpen ? "open" : ""}`}>
           <ul className="nav-list">
-            <li><Link to='/'>Главная</Link></li>
-            <li><Link to='/tariffs'>Тарифы</Link></li>
-            <li><a href="/services">Услуги</a></li>
-            <li><a href="/calculator">Калькулятор</a></li>
-            <li><a href="/contacts">Контакты</a></li>
+            <li><Link to='/' onClick={()=>setMenuOpen(false)}>Главная</Link></li>
+            <li><Link to='/tariffs' onClick={()=>setMenuOpen(false)}>Тарифы</Link></li>
+            <li><Link to="/services" onClick={()=>setMenuOpen(false)}>Услуги</Link></li>
+            <li><Link to="/calculator" onClick={()=>setMenuOpen(false)}>Калькулятор</Link></li>
+            <li><Link to="/contacts" onClick={()=>setMenuOpen(false)}>Контакты</Link></li>
           </ul>
 
           <div className="contact mobile-only">

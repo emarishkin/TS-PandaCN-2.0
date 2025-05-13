@@ -2,10 +2,9 @@ import React from "react";
 import { TariffsSection } from "../components/TariffsSection";
 
 
-export const HomePage: React.FC = () => {
+export const TariffPage: React.FC = () => {
   return (
     <div>
-      <h2>Наши тарифы</h2>
       <TariffsSection />
     </div>
   );
