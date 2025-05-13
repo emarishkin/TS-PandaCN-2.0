@@ -6,6 +6,7 @@ import { HomePage } from "./pages/HomePage"
 import { CalculatePage } from "./pages/CalculatePage"
 import { TariffPage } from "./pages/TariffPage"
 import { ServicePage } from "./pages/ServicePage"
+import { MorePage } from "./pages/MorePage"
 
 function App() {
  
@@ -18,6 +19,7 @@ function App() {
         <Route path="/calculator" element={<CalculatePage />} />
         <Route path="/tariffs" element={<TariffPage />} />
         <Route path="/services" element={<ServicePage />} />
+        <Route path="/more" element={<MorePage />} />
       </Routes>
     </Router>
     </>
