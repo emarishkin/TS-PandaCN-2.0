@@ -86,6 +86,10 @@
     background: url(https://pandacnexpress.ru/images/delivery-order/order-img.png) no-repeat;
 }
 
+.accent-text{
+        color: #21e363;
+}
+
 @media (max-width: 1199px) {
     .delivery-order__item {
         min-height: 400px;
