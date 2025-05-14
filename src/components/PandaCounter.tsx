@@ -25,7 +25,7 @@ const PandaCounter: React.FC = () => {
   return (
     <div className="counter-container">
       <div className="counter-number">{count.toLocaleString()}</div>
-      <div className="counter-label">успешных доставок розницы и опта</div>
+      <div className="counter-label">успешных доставок</div>
     </div>
   );
 };
