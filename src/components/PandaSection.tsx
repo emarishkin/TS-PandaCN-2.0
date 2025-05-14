@@ -10,7 +10,7 @@ export const PandaSection: FC = () => {
     return(
         <section className="panda-section">
             <div className="container">
-                <h2>PandaCnExpress в цифрах:</h2>
+                <h2>PandaCn<span style={{color:'#21e363',margin:0}}>Express</span> в цифрах:</h2>
                 <p>Качество оказываемых услуг лучше всего демонстрирует статистика. Ниже мы привели наши нескромные показатели за все время нашей работы.</p>
                 
                 <div className="counters-grid">

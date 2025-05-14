@@ -19,11 +19,12 @@
 }
 
 .panda-section p {
-    text-align: center;
+    text-align: start;
     max-width: 800px;
     margin: 0 auto 40px;
     color: #666;
     font-size: 18px;
+    margin-left: 0;
 }
 
 /* Стили для контейнера счетчиков */

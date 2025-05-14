@@ -24,7 +24,7 @@ export const PandaPercent:FC = () => {
     return(
     <div className="counter-container">
       <div className="counter-number">{count.toLocaleString()}%</div>
-      <div className="counter-label">Лет опыта</div>
+      <div className="counter-label">клиентов остаются с нами</div>
     </div>
     )
 }
