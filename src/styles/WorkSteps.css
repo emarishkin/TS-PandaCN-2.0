@@ -1,0 +1,96 @@
+
+
+.work-steps-container {
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 16px;
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.work-steps-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.steps-line-container {
+  position: relative;
+  height: 160px;
+}
+
+.steps-line {
+  position: absolute;
+  top: 60%;
+  left: 5%;
+  right: 5%;
+  height: 4px;
+  background-color: #ccc;
+  z-index: 1;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  z-index: 2;
+  margin-top: 80px;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  background-color: #999;
+  border-radius: 50%;
+  margin-bottom: 8px;
+  transition: background-color 0.3s;
+}
+
+.step.active .circle {
+  background-color: orange;
+}
+
+.label {
+  font-size: 14px;
+  text-align: center;
+}
+
+.panda {
+  position: absolute;
+  top: -50px;
+  left: 25px;
+  width: 80px;
+  height: 80px;
+  transition: transform 2s ease-in-out;
+  z-index: 3;
+}
+
+.panda-bounce {
+  width: 100%;
+  height: 100%;
+  animation: pandaBounce 0.6s infinite alternate;
+}
+
+.panda img {
+  width: 100%;
+  height: auto;
+}
+
+@keyframes pandaBounce {
+  0% {
+    transform: translateY(0px) scale(1);
+  }
+  100% {
+    transform: translateY(-20px) scale(1.01);
+  }
+}
+
