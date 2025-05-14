@@ -1,0 +1,21 @@
+.counter-container {
+  text-align: center;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: #fff8f0;
+  border-radius: 16px;
+  max-width: 300px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.counter-number {
+  font-size: 48px;
+  font-weight: bold;
+  color: #ff7e00;
+}
+
+.counter-label {
+  font-size: 18px;
+  color: #333;
+  margin-top: 10px;
+}
