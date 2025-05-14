@@ -4,8 +4,8 @@ import { InfoTwo } from "../components/InfoTwo";
 import { TariffsSection } from "../components/TariffsSection";
 import { Preimushestva } from "../components/Preimushestva";
 import { ServiceSection } from "../components/ServiceSection";
-import PandaCounter from "../components/PandaCounter";
-import { PandaClients } from "../components/PandaClients";
+
+import { PandaSection } from "../components/PandaSection";
 // import WorkSteps from "../components/WorkSteps";
 
 
@@ -18,8 +18,7 @@ export const HomePage: React.FC = () => {
       <Preimushestva />
       <ServiceSection />
       {/* <WorkSteps /> */}
-      <PandaCounter/>
-      <PandaClients/>
+      <PandaSection/>
     </div>
   );
 };
