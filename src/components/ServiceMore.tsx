@@ -1,23 +1,22 @@
 import { FC } from "react";
 import '../styles/ServiceMore.css'
+import { Link } from "react-router-dom";
 
 interface ServiceMoreProps{
-  closeOn:()=>void 
-  opning:boolean
+ 
 }
 
-export const ServiceMore:FC<ServiceMoreProps> = ({closeOn, opning}) => {
-    if (!opning) return null;
+export const ServiceMore:FC<ServiceMoreProps> = () => {
+   
     
     return (
         <div className="container">
         
             <div className="service-more-content">
                 <h2 className="h2-more">Подробная информация</h2>
-                
-                <button onClick={closeOn} className="back-button">
-                    Вернуться назад
-                </button>
+                <Link to=".." relative="path" className="back-button">
+                Вернуться назад
+                </Link> 
             </div>
             
         </div>

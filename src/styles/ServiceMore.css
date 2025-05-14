@@ -33,3 +33,21 @@
     cursor: pointer;
 } */
 
+.back-button {
+    padding: 10px 20px;
+    background: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.back-button:hover {
+    background: #0052a3;
+}
+
+.h2-more{
+    margin-bottom: 0;
+}
