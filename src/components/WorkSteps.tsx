@@ -21,7 +21,7 @@ const WorkSteps: React.FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveStep((prev) => (prev + 1) % steps.length);
-    }, 4000); // Каждые 4 секунды панда двигается
+    }, 3000); // Каждые 4 секунды панда двигается
 
     return () => clearInterval(interval);
   }, []);
@@ -49,7 +49,7 @@ const WorkSteps: React.FC = () => {
         <div
   className="panda"
   style={{
-    transform: `translateX(${activeStep * 145}%)`,
+    transform: `translateX(${activeStep * 120}%)`,
   }}
   ref={pandaRef}
 >
