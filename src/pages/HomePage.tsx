@@ -4,7 +4,7 @@ import { InfoTwo } from "../components/InfoTwo";
 import { TariffsSection } from "../components/TariffsSection";
 import { Preimushestva } from "../components/Preimushestva";
 import { ServiceSection } from "../components/ServiceSection";
-import WorkSteps from "../components/WorkSteps";
+// import WorkSteps from "../components/WorkSteps";
 
 
 export const HomePage: React.FC = () => {
@@ -15,7 +15,7 @@ export const HomePage: React.FC = () => {
       <TariffsSection />
       <Preimushestva />
       <ServiceSection />
-      <WorkSteps />
+      {/* <WorkSteps /> */}
     </div>
   );
 };
