@@ -50,7 +50,7 @@ export const FormaB:FC<FormaBProps> = () => {
             placeholder="Ваш вопрос (необязательно)"
             />
 
-            <label><input type="checkbox" checked={check} onChange={()=>setCheck(prev=>!prev)} />Соглашаюсь с действующей политикой обработки персональных данных</label>
+            <label className="pixLabel"><input className="pix" type="checkbox" checked={check} onChange={()=>setCheck(prev=>!prev)} />Соглашаюсь с действующей политикой обработки персональных данных</label>
 
             <button type="submit">Отправить</button>
         </form>

@@ -6,7 +6,8 @@ import { Preimushestva } from "../components/Preimushestva";
 import { ServiceSection } from "../components/ServiceSection";
 
 import { PandaSection } from "../components/PandaSection";
-import { BottomForm } from "../components/bottomForm/BottomForm";
+import { BottomForm } from "../components/BottomForm";
+
 // import WorkSteps from "../components/WorkSteps";
 
 
@@ -20,7 +21,7 @@ export const HomePage: React.FC = () => {
       <ServiceSection />
       {/* <WorkSteps /> */}
       <PandaSection/>
-      <BottomForm />
+       <BottomForm/>
     </div>
   );
 };
