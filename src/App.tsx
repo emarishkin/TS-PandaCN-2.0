@@ -7,6 +7,7 @@ import { CalculatePage } from "./pages/CalculatePage"
 import { TariffPage } from "./pages/TariffPage"
 import { ServicePage } from "./pages/ServicePage"
 import { MorePage } from "./pages/MorePage"
+import { ContactPage } from "./pages/ContactPage"
 
 function App() {
  
@@ -20,6 +21,7 @@ function App() {
         <Route path="/tariffs" element={<TariffPage />} />
         <Route path="/services" element={<ServicePage />} />
         <Route path="/more" element={<MorePage />} />
+        <Route path="/contacts" element={<ContactPage/>} />
       </Routes>
     </Router>
     </>
