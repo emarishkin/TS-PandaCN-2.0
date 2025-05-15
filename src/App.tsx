@@ -8,6 +8,7 @@ import { TariffPage } from "./pages/TariffPage"
 import { ServicePage } from "./pages/ServicePage"
 import { MorePage } from "./pages/MorePage"
 import { ContactPage } from "./pages/ContactPage"
+import { Footer } from "./components/Footer"
 
 function App() {
  
@@ -23,6 +24,7 @@ function App() {
         <Route path="/more" element={<MorePage />} />
         <Route path="/contacts" element={<ContactPage/>} />
       </Routes>
+      <Footer/>
     </Router>
     </>
   )
