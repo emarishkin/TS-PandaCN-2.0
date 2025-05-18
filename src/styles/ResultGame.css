@@ -1,25 +1,29 @@
 /* Стили для результата */
 .result {
+    position: relative;
     text-align: center;
     background-color: white;
     padding: 30px;
-    border-radius: 8px;
+    border-radius: 40px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .result img {
+    position: absolute;
     width: 150px;
     height: 150px;
     margin-bottom: 20px;
-    border-radius: 50%;
+    border-radius: 40px;
     object-fit: cover;
     border: 5px solid #4caf50;
+    left: 85px;
 }
 
 .result h2 {
     color: #2c3e50;
     font-size: 24px;
     margin-bottom: 15px;
+        margin-top: 170px;
 }
 
 .result button {

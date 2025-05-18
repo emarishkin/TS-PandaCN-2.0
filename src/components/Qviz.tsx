@@ -19,6 +19,7 @@ export const Qviz: FC = () => {
     return (
         <section className="qviz-section">
             <div className='container'>
+                <div className="normis">
                 <h2>Пройди простую викторину</h2>
                 {step !== quastions.length ? (
                     <Game 
@@ -33,6 +34,7 @@ export const Qviz: FC = () => {
                         totalQuestions={quastions.length} 
                     />
                 )}
+                </div>
             </div>
         </section>
     );

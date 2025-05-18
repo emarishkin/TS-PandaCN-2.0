@@ -5,12 +5,14 @@
   
     font-family: 'Arial', sans-serif;
 }
-
-
-
-h2 {
-    text-align: center;
-    color: #2c3e50;
-    margin-bottom: 30px;
-    font-size: 28px;
+.normis{
+       display: flex
+;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+        flex-direction: column;
 }
+
+
+
