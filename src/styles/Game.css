@@ -1,0 +1,53 @@
+/* Стили для игрового компонента */
+.game {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.progresBar {
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.progresBar div {
+    height: 100%;
+    background-color: #4caf50;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.game h2 {
+    color: #34495e;
+    margin-bottom: 20px;
+    font-size: 22px;
+    text-align: left;
+}
+
+.game ul {
+    list-style: none;
+    padding: 0;
+}
+
+.game li {
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    background-color: #f1f8fe;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid #d1e3f5;
+}
+
+.game li:hover {
+    background-color: #d1e3f5;
+    transform: translateX(5px);
+}
+
+.game li:active {
+    transform: scale(0.98);
+}
