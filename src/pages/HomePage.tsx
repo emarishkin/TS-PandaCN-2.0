@@ -7,6 +7,7 @@ import { ServiceSection } from "../components/ServiceSection";
 
 import { PandaSection } from "../components/PandaSection";
 import { BottomForm } from "../components/BottomForm";
+import { Qviz } from "../components/Qviz";
 
 // import WorkSteps from "../components/WorkSteps";
 
@@ -21,6 +22,7 @@ export const HomePage: React.FC = () => {
       <ServiceSection />
       {/* <WorkSteps /> */}
       <PandaSection/>
+      <Qviz />
        <BottomForm/>
     </div>
   );
