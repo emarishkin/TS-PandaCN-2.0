@@ -2,6 +2,7 @@ import { FC } from "react";
 import { IPanda } from "../types/questions";
 import '../styles/Game.css'
 
+
 interface GameProps {
     question: IPanda;
     onClickVariant: (index: number) => void;
@@ -18,7 +19,7 @@ export const Game: FC<GameProps> = ({ question, onClickVariant, step, totalQuest
                 <div style={{ width: `${progress}%` }}></div>
             </div>
             <div>
-                <h2>Выбери правильный ответ</h2>
+                <h2>{question.title}</h2>
                 <ul>
                     {question.variants.map((variant, index) => (
                         <li 
